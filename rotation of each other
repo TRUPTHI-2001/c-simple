@@ -8,7 +8,7 @@ void main()
    void *flag;
    printf("enter the 1st string\n");
    scanf("%s",a);
-   printf("enter the 1st string\n");
+   printf("enter the 2nd string\n");
    scanf("%s",b);
     
    if(strlen(a)==strlen(b))
