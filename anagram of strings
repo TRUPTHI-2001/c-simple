@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include<string.h>
+#include <stdlib.h>
+void main()
+{
+   char str1[1000],str2[1000];
+   int i,j,len1,len2,found=0,notfound=0,len;
+   printf("enter the first string\n");
+   scanf("%s",str1);
+   printf("enter the second string\n");
+   scanf("%s",str2);
+   len1=strlen(str1);
+   len2=strlen(str2);
+   if(len1==len2)
+   {
+       len=len1;
+       for(i=0;i<len;i++)
+       {
+           found=0;
+           for(j=0;j<len;j++)
+           {
+               if(str1[i]==str2[j])
+               {
+                   found=1;
+                   break;
+               }
+           }
+           if(found==0)
+           {
+               notfound=1;
+               break;
+           }
+       }
+       if(notfound==1)
+       {
+           printf("not anagram\n");
+       }
+       else
+       {
+           printf("anagram\n");
+       }
+   }
+   else
+   {
+       printf("not anagram\n");
+   }
+}
