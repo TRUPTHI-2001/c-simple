@@ -1,0 +1,29 @@
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+   char a[100],maxchar;
+   int i,j,maxcount=0,count=0;
+   printf("enter the string\n");
+   scanf("%[^\n]s",a);
+     
+   for(i=0;i<strlen(a);i++)
+   {
+       count=0;
+     for(j=0;j<strlen(a);j++)
+     {
+         if(a[i]==a[j] && a[i]!= ' ')
+         {
+             count++;
+         }
+     }
+     if(maxcount<count)
+     {
+         maxcount=count;
+         maxchar=a[i];
+     }
+   }
+   printf("%c is the maximum appaerring chracter which appears %d times\n",maxchar,maxcount);
+    return 0;
+}
