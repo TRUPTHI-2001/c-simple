@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<stdlib.h>
+# define s_size 5
+struct book
+{
+	int book_id;
+	char book_name[10];
+	char book_author[10];
+	int book_price;
+};
+void push(struct book bk,int *top,struct book stack[])
+{
+	(*top)++;
+	stack[*top]=bk;
+}
+void pop(int *top,struct book stack[])
+{
+	(*top)--;
+	
+}
+void display(int top,struct book stack[])
+
+{
+		printf("*******************************************************\n");
+		int i,j;
+		for(i=top;i>=0;i--)
+		{
+			printf("id=%d \n name=%s \n author=%s \nprice=%d\n",stack[i].book_id,stack[i].book_name,stack[i].book_author,stack[i].book_price); 
+		}
+	printf("\n");
+}
+void main()
+{
+	struct book stack[s_size],bk;
+	int choice;
+int top=-1;
+	for(;;)
+	{
+		printf("press 1 to push\n 2 to pop \n 3 to display\n 4: exit\n");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+			case 1:if(top==s_size-1)
+				{
+					printf("stack full\n");
+					break;
+				}
+				printf("enter the book_id,book name,book author,book price\n");
+				scanf("%d %s %s %d",&bk.book_id,bk.book_name,bk.book_author,&bk.book_price);
+				push(bk,&top,stack);
+				break;
+			case 2:if(top==-1)
+				{
+					printf("stack empty\n");
+					break;
+			
+				}
+				pop(&top,stack);
+				break;
+			case 3:if(top==-1)
+				{
+					printf("stack empty\n");
+					break;
+			
+				}
+				printf("the contents of stack are\n");
+				display(top,stack);
+				break;
+			case 4:exit(0);
+			
+
+		}
+	}
+}
