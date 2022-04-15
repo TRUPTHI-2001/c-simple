@@ -1,0 +1,25 @@
+#include<stdio.h>
+void swap(int *ptr1,int *ptr2)
+{
+    int temp;
+    temp=*ptr1;
+    *ptr1=*ptr2;
+    *ptr2=temp;
+    
+}
+int main()
+{
+    int n1;
+    int n2;
+    printf("enter first integer");
+    scanf("%d",&n1);
+     printf("enter second integer");
+    scanf("%d",&n2);
+    int *ptr1=&n1;
+    int *ptr2=&n2;
+    swap(ptr1,ptr2);
+    printf("the first no is %d",*ptr1);
+    printf("the first no is %d",*ptr2);
+    return 0;
+    
+}
